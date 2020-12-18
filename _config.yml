@@ -1,45 +1,40 @@
-title: Bay #博客标题
-description: Just 4 Fun. #博客描述
-keywords: blog,css,html,php #博客关键字
-author: WJX
+# Site settings
+title:          Rain
+description:    "Rain is a simple and clean Jekyll theme with focus on content."
+url:            https://github.com/inelaah/rain
 
-#title hide and show
-hide: (つェ⊂)我藏好啦
-show: ´∇｀ 呀被发现啦~ 
+# Author
+author:
+  name:         Inela Avdic Hukic
+  email:        inelaah@gmail.com
+  url:          https://inelaah.com
 
-baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
-url: eotiledream.github.io # change this to the base hostname & protocol for your site
-buildtime: "1514736000" #博客建立时的时间戳 可进入https://tool.lu/timestamp/将博客建立时的日期转换成时间戳
-           #The timestamp at the time of blog establishment can be entered at https://tool.lu/timestamp/to convert the date at the time of blog establishment into a timestamp.
+# Build settings
+markdown:       kramdown
 
-PJAX: true #启用PJAX，会与评论系统冲突（如不用评论系统建议开启）
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
-paginate: 8 #同时显示的最大文章数，超过自动分页
-paginate_path: "page:num"
-
-background: https://api.dujin.org/bing/1920.php
-theme_color: 546E7A
-
-# hydrogen-blog date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-hydrogen-blog:
-  date_format: "%b %-d, %Y"
-
-#MathJax switch
-MathJax: false
-
-#install emoji
+# Gems
 plugins:
-  - jemoji
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
 
-# social account
-image:
-twitter:
-  username:
-#  site:
-facebook:
-  #publisher: null
-  #profile_id: null
-  app_id: null
-  #authors: null
-#  admins:
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Related posts settings
+related_posts_section:
+  max_count:        5
+  min_common_tags:  2
+
+# Links to social media
+social:
+  email: inelaah@gmail.com
+  github: https://github.com/inelaah
+  twitter: https://twitter.com
+  linkedin: https://ba.linkedin.com/in/inela-avdic-hukic-322354131

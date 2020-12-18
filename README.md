@@ -1,104 +1,133 @@
-# Hydrogen
-轻盈、干净
+# Rain
 
-跟随她的脚步，开始你的博客之旅
+Rain is a simple and clean Jekyll theme with focus on content. It's a fork of [Tale theme](https://github.com/chesterhow/tale) with additional customizations.
 
->厌倦了无止境的加载以及繁杂的页面内容？那您很幸运，因为您发现了Hydrogen
-><br>我们避免繁杂 使用轻量化的模块来渲染在您屏幕上展示出来的一切 
-><br>当您使用过后就知道，她带给你的不仅仅只有简洁极速的阅读体验...
+![](https://github.com/inelaah/rain/blob/master/images/screenshot.png)
 
-语言：简体中文 | [English](README-en.md)
+## Features
+- Compatible with GitHub Pages
+- Responsive design
+- Syntax highlighting
+- Markdown and HTML text formatting
+- Pagination of posts
+- Related articles section
+- Links to social media
 
-![hydrogen](/theme/logo-h.svg)
 
-~~点点~~Star~~来一个好吗！秋梨膏！！~~
+## Getting Started
 
-# #快速开始
+You will need to install Jekyll on your machine. Installation depends on your operating system and it is explained [here](https://jekyllrb.com/docs/installation/).
 
-![hydrogen](/theme/a-h.png)
+Then create a new directory and clone this repository:
 
-## #准备
-
-打开主题根目录下的`_config.yml`
-
-根据需求修改以下选项：
-
-`title` : 更改你的博客名字
-
-`description` : 更改你的博客描述
-
-`keywords` : 博客关键词(SEO相关)
-
-`baseurl` : 博客所在的目录文件夹，开头需带上`/`，如果为根目录请留空(建议将博客放置在根目录)
-
-`url` : 你的域名，如`atlinker.cn`无需加`http/https://`
-
-`bulidtime` : 博客建立时的时间戳，填写后将自动计算博客建立时间并显示在页脚. [日期转时间戳](https://tool.lu/timestamp/)
-
-`paginate` : 主页中显示的最大文章数，超过设定的数值文章自动归入下一页
-
-`background` : 博客首页主题图片路径
-
-`theme_color` : 博客顶部栏颜色，填颜色代码**但不要带上#号**
-
-`MathJax` : 是否开启MathJax(布尔值)
-
-`author` : 作者名
-
-> 开发者选项
->> `PJAX` : PJAX无刷新加载(布尔值)
-
-## #设置域名
-
-修改根目录下的CNAME文件为你的域名即可
-
-#### 关于主题的基本设置已经完毕~
-
----
-
-## #友链添加
-
-打开`_data`目录下的`friends.yml`文件，根据文件中模板新添代码即可
-
----
-
-## #文章置顶
-
-在文章Front Matter添加stickie: true即可
-
-如：
-
-```
- ---
- layout: post
- title: Hi
- stickie: true
- ---
+```bash
+mkdir rain
+cd rain
+git clone https://github.com/inelaah/rain.git
 ```
 
-## #评论
+Install all dependencies:
 
-#### #前提
+```bash
+bundle install
+```
 
-> 必须确定已阅读[Valine](https://valine.js.org/quickstart.html)文档
+## Site Configuration
 
-配置文件:
+There is a configuration file `_config.yml` in root directory. You should overwrite it to fit to your needs.
 
-`_data/social.yml` : 填写app id和key以及评论的相关信息
+An example of `_config.yml` looks like this:
 
-`_includes/comments.html` : 评论设置
+```bash
+# Site settings
+title:          Rain
+description:    "Rain is a simple and clean Jekyll theme with focus on content."
+url:            https://github.com/inelaah/rain
 
-确保配置无误后修改`_data/social.yml`中的`enable`值由`false`改为`ture`即可
+# Author
+author:
+  name:         Inela Avdic Hukic
+  email:        inelaah@gmail.com
+  url:          https://inelaah.com
 
-## #写在最后
+# Build settings
+markdown:       kramdown
 
-请花10分钟时间**认真**阅读文档，如还有疑难之处，请提[issues](https://github.com/link9596/hydrogen/issues/new)，我会尽力帮忙
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
-如使用过程有任何疑难Bug，也请提出[issues](https://github.com/link9596/hydrogen/issues/new)！ :+1:
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
 
-最后，如果喜欢~请给项目点个star:wink:(点star的dalao都超级靓的)
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
 
-![hydrogen](/theme/author.svg)
+# Related posts settings
+related_posts_section:
+  max_count:        5
+  min_common_tags:  2
 
-![](https://img.shields.io/github/repo-size/link9596/hydrogen?color=%23F8BBD0)
-![](https://img.shields.io/github/release/link9596/hydrogen?color=%235C6BC0&label=Version)
+# Links to social media
+social:
+  email: inelaah@gmail.com
+  github: https://github.com/inelaah
+  twitter: https://twitter.com
+  linkedin: https://ba.linkedin.com/in/inela-avdic-hukic-322354131
+```
+
+## Favicons
+
+It is recommended to put your own favicons:
+
+- `apple-touch-icon.png` (180x180)
+- `favicon-32x32.png` (32x32)
+- `favicon-16x16.png` (16x16)
+- `mstile-150x150.png` (150x150)
+- `android-chrome-192x192.png` (192x192)
+- `android-chrome-512x512.png` (512x512)
+
+in `/assets` directory. They're easily created via [Favicon Generator](https://realfavicongenerator.net/).
+
+
+## Related Articles
+
+Related articles section is based on article tags. For every post that you want to have this section you should define tags.
+To include related articles in the bottom of the content you should define `related_posts_section` property in configuration file.
+It contains two fields: `max_count` and `min_common_tags`:
+- `max_count` represents the maximum number of related articles shown on a single article.
+- `min_common_tags` represents the minimum number of common tags for two articles to become related articles.
+
+## Links to social media
+
+To include links to social media in the top right corner of your page you need to define `social` property.
+It contains email, GitHub, Twitter and LinkedIn fields. You can leave out any of these if you don't want them to show up on your page.
+
+## Customizing Rain theme
+
+If you want to customize Rain theme you can fork this project and make some changes. If you just want to change the style then you can find Sass files in `_sass/rain` directory.
+
+## Adding your own posts
+
+You can see an example of post structure in `_posts` directory. After you clone this project you should clean the `_posts` directory and add your own posts.
+
+## Build and serve
+
+```
+bundle exec jekyll serve
+```
+
+Head over to http://127.0.0.1:4000/ to see your page.
+
+## License
+
+Rain is licensed under the MIT license. Check the [LICENSE](LICENSE.md) file for details.
+
+## Author
+
+[Inela Avdic Hukic](https://github.com/inelaah)
